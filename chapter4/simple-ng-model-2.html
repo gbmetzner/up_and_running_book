@@ -1,0 +1,33 @@
+<html data-ng-app="notesApp">
+	<head>
+		<title>Notes App</title>
+	</head>
+
+	<body data-ng-controller="MainCtrl as ctrl">
+		<input type="text" data-ng-model="ctrl.username" />
+		<input type="password" data-ng-model="ctrl.password" />
+
+		<button data-ng-click="ctrl.change()" >Change Values</button>
+		<button data-ng-click="ctrl.submit()" >Submit</button>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.js"></script>
+
+		<script type="text/javascript">
+			angular.module('notesApp', [])
+				.controller('MainCtrl', [function(){
+					var self = this;
+
+					self.change = function(){
+						self.username = 'changed';
+						self.password = 'password';
+					};
+
+					self.submit = function(){
+						console.log('User clicked submit with ', self.username, self.password);
+					};
+
+				}]);
+		</script>
+
+	</body>
+</html>

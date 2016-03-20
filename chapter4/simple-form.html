@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html data-ng-app="notesApp">
+	
+	<head>
+		<title>Notes App</title>
+	</head>
+	
+	<body data-ng-controller="MainCtrl as ctrl">
+		<form data-ng-submit="ctrl.submit()">
+			<input type="text" data-ng-model="ctrl.user.username" />
+			<input type="password" data-ng-model="ctrl.user.password" />
+			<input type="submit" value="Submit" />
+		</form>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.js"></script>
+		<script type="text/javascript">
+			angular.module('notesApp', [])
+				.controller('MainCtrl', [function() {
+					var self = this; 
+
+					self.submit = function() {
+            			console.log('User clicked submit with ', self.user);
+          			};
+				}]);
+    	</script>
+	</body>
+
+</html>

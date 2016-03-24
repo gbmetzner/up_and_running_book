@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html data-ng-app="notesApp">
+	<head>
+		<title>Notes App</title>
+	</head>
+	<body data-ng-controller="MainCtrl as mainCtrl">
+		<h1>Hello Services</h1>
+		<button data-ng-click="mainCtrl.logStuff()">Log something</button>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.js"></script>
+		<script type="text/javascript">
+			angular.module('notesApp', [])
+				.controller('MainCtrl', ['$log', function($log){
+					var self = this;
+					self.logStuff = function(){
+						$log.log('The button was pressed.');
+					};
+				}]);
+		</script>
+	</body>
+</html>

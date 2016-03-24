@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html data-ng-app="notesApp">
+   <head>
+      <title>Notes App</title>
+   </head>
+   <body data-ng-controller="MainCtrl as mainCtrl">
+      <h1>Hello Controllers!</h1>
+      <button data-ng-click="mainCtrl.open('first')">Open First</button>
+      <button data-ng-click="mainCtrl.open('second')">Open Second</button>
+      
+      <div data-ng-switch on="mainCtrl.tab">
+         
+         <div data-ng-switch-when="first">
+            <div data-ng-controller="SubCtrl as ctrl">
+               <h3>First tab</h3>
+               <ul>
+                  <li data-ng-repeat="item in ctrl.list"> <span data-ng-bind="item.label"></span></li>
+               </ul>
+               <button data-ng-click="ctrl.add()">Add More Items</button> 
+            </div>
+         </div>
+      
+         <div data-ng-switch-when="second">
+            <div data-ng-controller="SubCtrl as ctrl">
+               <h3>Second tab</h3>
+               <ul>
+                  <li data-ng-repeat="item in ctrl.list"> <span data-ng-bind="item.label"></span></li>
+               </ul>
+               <button data-ng-click="ctrl.add()">Add More Items</button> 
+            </div>
+         </div>
+
+      </div>
+      
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.js"></script>
+      <script type="text/javascript" src="app.js"></script>
+   </body>
+</html>

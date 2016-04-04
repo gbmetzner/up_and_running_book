@@ -1,0 +1,9 @@
+{
+  "name": "up-running-chapter-7",
+  "version": "0.0.1",
+  "devDependencies": {
+    "karma": "0.13.22",
+    "karma-jasmine": "2.4.1",
+    "karma-opera-launcher": "~0.2.1"
+  }
+}
